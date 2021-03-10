@@ -2,6 +2,7 @@ package pomPages.todoLy;
 
 import controls.Button;
 import controls.Control;
+import controls.Label;
 import controls.TextBox;
 import org.openqa.selenium.By;
 
@@ -25,6 +26,14 @@ public class LeftSection {
 
     public Button verificationDeleteProject = new Button(By.xpath("//div[@id=\"ProjectListPlaceHolder\"]//li[last()]"));
 
+
+
+
     public LeftSection(){}
+
+    public void clickOnProject(String nameProject){
+        Label projectInList= new Label(By.xpath("//li//td[contains(.,'"+nameProject+"') and @class='ProjItemContent']"));
+        projectInList.click();
+    }
 
 }
